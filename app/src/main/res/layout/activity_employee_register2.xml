@@ -31,12 +31,13 @@
         app:layout_constraintVertical_bias="0.110000014" />
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="170dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title"
         app:layout_constraintVertical_bias="1.0">
@@ -49,44 +50,36 @@
             android:orientation="vertical">
 
             <EditText
-                android:id="@+id/name"
+                android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Name*"
-                android:inputType="textPersonName" />
+                android:hint="Password"
+                android:inputType="textPassword" />
 
             <EditText
-                android:id="@+id/birthday"
+                android:id="@+id/password2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:ems="10"
-                android:hint="Birthday (mmddyy)*"
-                android:inputType="date" />
+                android:hint="Confirm Password"
+                android:inputType="textPassword" />
 
-            <EditText
-                android:id="@+id/specialty"
+            <TextView
+                android:id="@+id/error"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:ems="10"
-                android:hint="Specialty*"
-                android:inputType="textPersonName" />
-
-            <EditText
-                android:id="@+id/linkedin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:ems="10"
-                android:hint="Linkedin URL*"
-                android:inputType="textPersonName" />
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="Passwords Don't Match"
+                android:textColor="#FF0000" />
 
             <Button
                 android:id="@+id/next"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
                 android:onClick="next"
                 android:text="Next" />
 
