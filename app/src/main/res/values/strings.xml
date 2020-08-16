@@ -1,3 +1,27 @@
 <resources>
     <string name="app_name">ApolloEduSolve</string>
+    <string name="i_am_a_business">I am a Business</string>
+    <string name="i_am_looking_for_work">i am an employee</string>
+    <string name="getting_started">Get Started</string>
+    <string name="connecting_businesses_and_people">Connecting Businesses and People</string>
+    <string name="fist_bump">Fist Bump</string>
+    <string name="server">https://cryptic-oasis-81229.herokuapp.com/</string>
+    <string name="title_activity_account_page">AccountPage</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_account_screen">AccountScreenActivity</string>
+    <string name="title_activity_login">Sign in</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="search">Search</string>
+    <string name="jobs">Jobs</string>
+    <string name="resources">Resources</string>
+    <string name="edit_profile">Edit Profile</string>
 </resources>

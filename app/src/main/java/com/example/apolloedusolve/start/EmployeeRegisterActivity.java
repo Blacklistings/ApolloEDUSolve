@@ -1,10 +1,12 @@
-package com.example.apolloedusolve;
+package com.example.apolloedusolve.start;
 
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+
+import com.example.apolloedusolve.R;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -49,12 +51,11 @@ public class EmployeeRegisterActivity extends AppCompatActivity {
             linkedin.setHintTextColor(Color.BLACK);
         }
         if(filled){
-            AccountRegisterData.birthday = birthday.getText().toString();
-            AccountRegisterData.linkedin = linkedin.getText().toString();
-            AccountRegisterData.name = name.getText().toString();
-            AccountRegisterData.specialty = name.getText().toString();
-
             Intent intent = new Intent(this, EmployeeRegisterActivity2.class);
+            intent.putExtra("name", name.getText().toString());
+            intent.putExtra("birthday", birthday.getText().toString());
+            intent.putExtra("specialty", specialty.getText().toString());
+            intent.putExtra("linkedin", linkedin.getText().toString());
             startActivity(intent);
         }
     }

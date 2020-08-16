@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.apolloedusolve">
+
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +11,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+
+        <activity android:name=".LoginActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name=".account_screen.AccountScreen"
+            android:label="@string/title_activity_account_page"
+            android:screenOrientation="portrait">
+
+        </activity>
+
+        <activity
+            android:name=".main.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/StartTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,12 +33,19 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".EmployeeRegisterActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity android:name=".EmployeeRegisterActivity2"
-            android:screenOrientation="portrait">
-        </activity>
+        <activity
+            android:name=".start.StartActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".start.EmployeeRegisterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".start.EmployeeRegisterActivity2"
+            android:screenOrientation="portrait" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

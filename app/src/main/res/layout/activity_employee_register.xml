@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EmployeeRegisterActivity">
+    android:background="@drawable/gradient"
+    tools:context=".start.EmployeeRegisterActivity">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -12,10 +13,9 @@
         android:layout_height="88dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.189"
         app:srcCompat="@drawable/logo" />
 
     <TextView
@@ -23,17 +23,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Employee Register"
-        android:textSize="30sp"
+        android:textColor="#FFFFFF"
+        android:textSize="40sp"
+        app:fontFamily="@font/roboto_thin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.110000014" />
+        app:layout_constraintVertical_bias="0.07999998" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="170dp"
+        android:layout_marginTop="240dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -54,6 +56,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Name*"
+                app:fontFamily="@font/roboto"
                 android:inputType="textPersonName" />
 
             <EditText
@@ -63,7 +66,8 @@
                 android:layout_marginTop="30dp"
                 android:ems="10"
                 android:hint="Birthday (mmddyy)*"
-                android:inputType="date" />
+                android:inputType="date"
+                app:fontFamily="@font/roboto" />
 
             <EditText
                 android:id="@+id/specialty"
@@ -72,6 +76,7 @@
                 android:layout_marginTop="30dp"
                 android:ems="10"
                 android:hint="Specialty*"
+                app:fontFamily="@font/roboto"
                 android:inputType="textPersonName" />
 
             <EditText
@@ -81,14 +86,18 @@
                 android:layout_marginTop="30dp"
                 android:ems="10"
                 android:hint="Linkedin URL*"
+                app:fontFamily="@font/roboto"
                 android:inputType="textPersonName" />
 
             <Button
                 android:id="@+id/next"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/rounded_button"
                 android:onClick="next"
-                android:text="Next" />
+                android:text="Next"
+                app:fontFamily="@font/roboto"
+                android:textColor="#FFFFFF" />
 
         </LinearLayout>
     </ScrollView>

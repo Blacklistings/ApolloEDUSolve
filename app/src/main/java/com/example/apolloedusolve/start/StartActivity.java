@@ -1,18 +1,20 @@
-package com.example.apolloedusolve;
+package com.example.apolloedusolve.start;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
 
-public class MainActivity extends AppCompatActivity {
+import com.example.apolloedusolve.LoginActivity;
+import com.example.apolloedusolve.R;
+
+public class StartActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_start);
     }
 
     public void employeeRegister(View view){
@@ -22,5 +24,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void businessRegister(View view){
 
+    }
+
+    public void login(View view){
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
     }
 }
