@@ -18,7 +18,7 @@ public class EmployeeRegisterActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_employee_register);
-        name = findViewById(R.id.name);
+        name = findViewById(R.id.name_in);
         birthday = findViewById(R.id.birthday);
         specialty = findViewById(R.id.specialty);
         linkedin = findViewById(R.id.linkedin);

@@ -1,8 +1,5 @@
 package com.example.apolloedusolve;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.accounts.Account;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -11,13 +8,15 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.apolloedusolve.account_activity.AccountActivity;
 import com.example.apolloedusolve.start.StartActivity;
 
 import org.apache.hc.client5.http.impl.classic.CloseableHttpResponse;
 import org.apache.hc.core5.http.io.entity.EntityUtils;
 
-import java.io.File;
 import java.io.IOException;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText username, password;
@@ -59,17 +58,21 @@ public class LoginActivity extends AppCompatActivity {
                 public void onReplyReceived(CloseableHttpResponse response) {
                     try {
                         in = new String(EntityUtils.toByteArray(response.getEntity()));
-                    } catch (IOException e) {
+                    } catch (IOException | NullPointerException e) {
                         e.printStackTrace();
-                        err.setText("Can't Contact Server");
-                        err.setVisibility(View.VISIBLE);
+                        err.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                err.setVisibility(View.VISIBLE);
+                                err.setText("Can't connect to server");
+                            }
+                        });
                     }
                     if(in.equals("0")){
                         FileSystem.writeAccountInfo(username, password, context);
                         Server.init(context);
-                        System.out.println("gg");
-                        //Intent intent = new Intent(context, AccountScreen.class);
-                        //startActivity(intent);
+                        Intent intent = new Intent(context, AccountActivity.class);
+                        startActivity(intent);
                     } else if(in.equals("1")){
                         err.post(new Runnable() {
                             @Override

@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.example.apolloedusolve.FileSystem;
 import com.example.apolloedusolve.R;
 import com.example.apolloedusolve.Server;
+import com.example.apolloedusolve.account_activity.AccountActivity;
 
 import org.apache.hc.client5.http.impl.classic.CloseableHttpResponse;
 
@@ -54,8 +55,9 @@ public class EmployeeRegisterActivity2 extends AppCompatActivity {
                         if(response != null){
                             Bundle extras = getIntent().getExtras();
                             FileSystem.writeAccountInfo(extras.getString("name"), password, context);
-                            //Intent intent = new Intent(context, AccountScreen.class);
-                            //startActivity(intent);
+                            Intent intent = new Intent(context, AccountActivity.class);
+                            intent.putExtra("name", extras.getString("name"));
+                            startActivity(intent);
                         } else {
                             //todo alert user server is down
                         }

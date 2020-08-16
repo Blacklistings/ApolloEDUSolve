@@ -14,7 +14,10 @@ import org.apache.hc.core5.http.NameValuePair;
 import org.apache.hc.core5.http.message.BasicNameValuePair;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Server {
     private static String serverURL;
@@ -29,8 +32,8 @@ public class Server {
         }
         String[] data = FileSystem.readAccountInfo(context);
         if(data!=null){
-            username = data[0];
-            password = data[1];
+            username = data[1];
+            password = data[2];
         } else {
             username = "";
             password = "";
@@ -58,12 +61,22 @@ public class Server {
         sendRequest(post, listener);
     }
 
+    public static void verifyLogin(OnReplyReceived listener){
+        verifyLogin(username, password, listener);
+    }
+
     public static void getUser(String username, OnReplyReceived listener){
-        final ArrayList<NameValuePair> elements = new ArrayList<>();
-        elements.add(new BasicNameValuePair("name", username));
-        final HttpGet get = new HttpGet(serverURL + "user");
-        get.setEntity(new UrlEncodedFormEntity(elements));
+        HttpGet get = null;
+        try {
+            get = new HttpGet(serverURL + "user?name="+ URLEncoder.encode(username, "UTF-8"));
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
         sendRequest(get, listener);
+    }
+
+    public static void getUser(OnReplyReceived listener){
+        getUser(username, listener);
     }
 
     public static void sendRequest(final ClassicHttpRequest req, final OnReplyReceived listener){
@@ -83,6 +96,11 @@ public class Server {
 
     public static boolean loggedin(){
         return !username.isEmpty();
+    }
+
+    public static void logout() {
+        username = "";
+        password = "";
     }
 
     public interface OnReplyReceived {

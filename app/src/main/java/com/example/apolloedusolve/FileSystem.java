@@ -26,7 +26,11 @@ public class FileSystem {
         }
     }
 
-    private static void writeToFile(String data, Context context, String path) {
+    public static void clearAccountInfo(Context context){
+        writeToFile("", context, "config.txt");
+    }
+
+    public static void writeToFile(String data, Context context, String path) {
         try {
             OutputStreamWriter outputStreamWriter = new OutputStreamWriter(context.openFileOutput(path, Context.MODE_PRIVATE));
             outputStreamWriter.write(data);
@@ -36,9 +40,8 @@ public class FileSystem {
             Log.e("Exception", "File write failed: " + e.toString());
         }
     }
-    private static String readFromFile(Context context, String path) {
+    public static String readFromFile(Context context, String path) {
         String ret = "";
-
         try {
             InputStream inputStream = context.openFileInput(path);
 
